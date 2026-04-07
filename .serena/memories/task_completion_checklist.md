@@ -1,0 +1,6 @@
+- After making changes, verify the smallest relevant scope only: affected Markdown docs, target pack, or specific TypeScript subproject.
+- If you touched a pack, review its `README.md`, `INSTALL.md`, and `VERIFY.md` for consistency.
+- If you touched TypeScript tooling, run validation from the nearest subproject directory (for example `bun install` then `bunx tsc --noEmit` when a `tsconfig.json` exists).
+- If you touched security-sensitive or environment-related files, ensure no secrets were added outside `.env` and consider the repository's validation tooling in `Tools/validate-protected.ts`.
+- Check `git diff` for accidental edits to release snapshots or unrelated packs.
+- Keep Windows compatibility in mind for repo editing, but remember the platform document says the actual PAI runtime is not yet supported on Windows.

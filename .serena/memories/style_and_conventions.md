@@ -1,0 +1,8 @@
+- Repository is documentation-heavy and highly structured; preserve existing Markdown-first organisation and avoid unnecessary file reshuffling.
+- Pack convention: each pack is self-contained and typically ships `README.md`, `INSTALL.md`, `VERIFY.md`, and `src/`.
+- Naming is descriptive and title-cased for many Markdown assets (e.g. `AgentProfileSystem.md`, `QuickReference.md`) while TypeScript utilities use standard `.ts` filenames.
+- Keep changes aligned with PAI principles described in `README.md`: user-centric design, deterministic infrastructure, code-before-prompts, spec/test/evals-first, CLI-first workflows, and modular skill management.
+- TypeScript subprojects use ESM (`"type": "module"` seen in `Packs/Agents/src/Tools/package.json`).
+- Security convention: secrets belong in `.env`, never committed, as documented in `.env.example`; validation tooling exists in `Tools/validate-protected.ts`.
+- Because the repo contains release snapshots, avoid broad global edits across historical versions unless the task explicitly requires touching release artefacts.
+- When editing docs or packs, preserve the installation/verification workflow structure and keep instructions explicit for AI agents.

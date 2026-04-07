@@ -1,0 +1,21 @@
+- Windows shell basics for this workspace:
+  - `Set-Location c:\Users\Rob\code\Personal_AI_Infrastructure`
+  - `Get-ChildItem`
+  - `Get-ChildItem -Recurse`
+  - `Select-String -Path .\* -Pattern "text" -Recurse`
+  - `git status`
+  - `git diff`
+- Repository navigation:
+  - Inspect packs: `Get-ChildItem .\Packs`
+  - Inspect releases: `Get-ChildItem .\Releases`
+  - Inspect utilities: `Get-ChildItem .\Tools`
+- Utility tool commands from `Tools/README.md`:
+  - `bun .\Tools\BackupRestore.ts backup`
+  - `bun .\Tools\BackupRestore.ts backup --name "pre-change"`
+  - `bun .\Tools\BackupRestore.ts list`
+  - `bun .\Tools\BackupRestore.ts restore <backup-name>`
+- TypeScript/package work is per-subproject rather than from a single root manifest. Before running install/build/test, inspect the nearest local `package.json`.
+- Representative dependency install command inside a subproject folder: `bun install`
+- Representative TypeScript validation in a subproject with `tsconfig.json`: `bunx tsc --noEmit`
+- Verification for packs is usually documentation-driven: open the target pack's `INSTALL.md` and `VERIFY.md` and follow those steps.
+- Serena MCP in this workspace is configured through `.vscode/mcp.json` and uses `uvx` to launch the server.

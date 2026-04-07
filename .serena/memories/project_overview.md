@@ -1,0 +1,10 @@
+- Project: Personal AI Infrastructure (PAI), an open-source personal AI platform built on Claude Code concepts and agentic workflows.
+- Purpose: give users persistent memory, skills, workflows, custom agents, and pack-based capabilities that improve over time.
+- Primary repo shape: documentation-first monorepo with top-level guides plus `Packs/`, `Releases/`, `Tools/`, `images/`, and editor config like `.vscode/mcp.json`.
+- `Packs/` contains standalone AI-installable capability packs. Typical pack layout: `README.md`, `INSTALL.md`, `VERIFY.md`, `src/`.
+- `Releases/` contains versioned release snapshots, including `.claude` distributions for PAI releases.
+- `Tools/` contains maintenance utilities such as `BackupRestore.ts` and `validate-protected.ts`.
+- Tech stack is mixed but centred on Markdown documentation, TypeScript, Bun, and some shell-script-oriented installation flows. Representative package manifest found at `Packs/Agents/src/Tools/package.json`.
+- Important platform fact: `PLATFORM.md` states Windows is not currently supported for the main PAI platform; macOS and Linux are the supported runtime targets.
+- MCP/editor integration in this workspace includes Serena via `.vscode/mcp.json`, launched with `uvx` from the GitHub-hosted `oraios/serena` package.
+- Environment variables are centralised via `.env` copied from `.env.example`; pack-specific API keys are intended to live in one file rather than being scattered.
